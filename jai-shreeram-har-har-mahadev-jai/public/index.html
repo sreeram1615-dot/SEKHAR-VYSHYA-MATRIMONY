@@ -1,0 +1,293 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sekhar Vyshya Matrimony</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="brand">
+        <img class="site-logo" src="images/logo.png" alt="Sekhar Vyshya Matrimony logo">
+        <div>
+        <h1>SEKHAR VYSHYA MATRIMONY</h1>
+        </div>
+      </div>
+      <nav class="site-nav" aria-label="Main menu">
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+        <a href="#privacy">Privacy</a>
+        <a href="#feedback">Feedback</a>
+        <button id="logoutButton" class="ghost hidden" type="button">Logout</button>
+      </nav>
+    </header>
+
+    <main>
+      <section id="loginPanel" class="hero">
+        <div class="hero-copy">
+          <h2>Member Login</h2>
+          <p>
+            Access is only for verified members. Pay ₹1 for 3 months, then admin
+            will create your login account after payment verification.
+          </p>
+          <div class="subscription-note">
+            <p><strong>Subscription:</strong> ₹1 for 3 months</p>
+            <p><strong>UPI ID:</strong> 6281169109@ibl</p>
+            <p>After payment, send your name, phone number, email address, and payment screenshot on WhatsApp.</p>
+            <p>Admin will verify payment and create your login account.</p>
+          </div>
+          <a class="whatsapp-link" href="https://wa.me/919849676581" target="_blank" rel="noreferrer">
+            Request Access on WhatsApp
+          </a>
+        </div>
+
+        <form id="loginForm" class="login-card">
+          <label>
+            Email
+            <input id="email" type="email" autocomplete="email" required>
+          </label>
+          <label>
+            Password
+            <input id="password" type="password" autocomplete="current-password" required>
+          </label>
+          <button type="submit">Login</button>
+          <p id="loginMessage" class="message"></p>
+        </form>
+      </section>
+
+      <section id="memberPanel" class="hidden">
+        <div class="member-title">
+          <p class="eyebrow">Verified Member Area</p>
+          <h2>Bride and Groom Profiles</h2>
+          <p>
+            Logged-in members can view profile details and mobile numbers directly.
+          </p>
+          <div class="member-rules">
+            <p><strong>Member Rules</strong></p>
+            <p>You can view verified profiles after login.</p>
+            <p>Mobile numbers are visible only after login.</p>
+            <p>Please use profile contact details only for genuine matrimonial purposes.</p>
+          </div>
+          <div id="accountDetails" class="account-details">
+            <p><strong>Account Details</strong></p>
+            <p>Email: <span id="accountEmail">-</span></p>
+            <p>Subscription: ₹1 for 3 months</p>
+            <p>Status: Approved login account</p>
+            <p>Renewal and expiry are managed by admin after payment verification.</p>
+            <button id="deleteAccountButton" class="danger-button" type="button">Delete My Account</button>
+            <p id="accountMessage" class="message"></p>
+          </div>
+          <button id="showProfileForm" type="button">Add My Profile</button>
+        </div>
+
+        <form id="profileForm" class="profile-form hidden">
+          <h3>Add My Profile</h3>
+          <div class="form-grid">
+            <label>
+              Profile For
+              <select id="profileFor" required>
+                <option value="">Select</option>
+                <option value="Bride">Bride</option>
+                <option value="Groom">Groom</option>
+              </select>
+            </label>
+            <label>
+              Date of Birth
+              <input id="dateOfBirth" type="date" required>
+            </label>
+            <label>
+              Place of Birth (Not Mandatory)
+              <input id="placeOfBirth" type="text">
+            </label>
+            <label>
+              Rashi
+              <input id="rashi" type="text" required>
+            </label>
+            <label>
+              Nakshathra
+              <input id="nakshathra" type="text" required>
+            </label>
+            <label>
+              Gothram
+              <input id="gothram" type="text" required>
+            </label>
+            <label>
+              Uncles Gothram
+              <input id="unclesGothram" type="text" required>
+            </label>
+            <label>
+              Height
+              <input id="height" type="text" required>
+            </label>
+            <label>
+              Education
+              <input id="education" type="text" required>
+            </label>
+            <label>
+              Occupation / Income
+              <input id="occupationIncome" type="text" required>
+            </label>
+            <label>
+              Complexion (Not Mandatory)
+              <input id="complexion" type="text">
+            </label>
+            <label>
+              Father Name
+              <input id="fatherName" type="text" required>
+            </label>
+            <label>
+              Occupation of Father (Not Mandatory)
+              <input id="fatherOccupation" type="text">
+            </label>
+            <label>
+              Mother Name
+              <input id="motherName" type="text" required>
+            </label>
+            <label>
+              Occupation of Mother (Not Mandatory)
+              <input id="motherOccupation" type="text">
+            </label>
+            <label>
+              Marital Status
+              <select id="maritalStatus" required>
+                <option value="">Select</option>
+                <option value="Never Married">Never Married</option>
+                <option value="Divorced">Divorced</option>
+                <option value="Widowed">Widowed</option>
+              </select>
+            </label>
+          </div>
+          <label>
+            Siblings
+            <textarea id="siblings" rows="4" required></textarea>
+          </label>
+          <label>
+            Communication Address
+            <textarea id="communicationAddress" rows="4" required></textarea>
+          </label>
+          <label>
+            Phone Number (Visible Only to Admin)
+            <input id="phoneNumber" type="tel" required>
+          </label>
+          <label>
+            Photos - Up to 8 Photos, 100 MB Each
+            <input id="profilePhotos" type="file" accept="image/*" multiple>
+          </label>
+          <label>
+            About Family (Not Mandatory)
+            <textarea id="aboutFamily" rows="4"></textarea>
+          </label>
+          <label>
+            Expectations (Not Mandatory)
+            <textarea id="expectations" rows="4"></textarea>
+          </label>
+          <p class="form-note">
+            After submitting, WhatsApp will open. Send the message to admin for profile approval.
+            Photos cannot attach automatically, so please send the selected photos separately on WhatsApp.
+          </p>
+          <button type="submit">Send Profile to Admin</button>
+        </form>
+
+        <div class="tabs">
+          <button class="tab active" data-target="brides" type="button">Bride Profiles</button>
+          <button class="tab" data-target="grooms" type="button">Groom Profiles</button>
+        </div>
+
+        <section id="brides" class="profile-grid">
+          <article class="profile-card">
+            <img class="profile-photo" src="images/bride-b001.svg" alt="Bride profile B001 photo">
+            <div>
+              <h3>Profile ID: B001</h3>
+              <p>Age: 26</p>
+              <p>Height: 5'4"</p>
+              <p>Education: B.Com</p>
+              <p>Occupation: Accountant</p>
+              <p>Location: Hyderabad</p>
+              <p>Community: Vyshya</p>
+              <p>Rashi: Mesha</p>
+              <p>Nakshatra: Ashwini</p>
+              <p>Gothra: To be updated</p>
+              <p>Father: To be updated</p>
+              <p>Siblings: To be updated</p>
+              <p>Marital Status: Never Married</p>
+              <p>Mobile Number: To be updated</p>
+            </div>
+          </article>
+        </section>
+
+        <section id="grooms" class="profile-grid hidden">
+          <article class="profile-card">
+            <img class="profile-photo" src="images/groom-g001.svg" alt="Groom profile G001 photo">
+            <div>
+              <h3>Profile ID: G001</h3>
+              <p>Age: 29</p>
+              <p>Height: 5'8"</p>
+              <p>Education: MBA</p>
+              <p>Occupation: Business Owner</p>
+              <p>Location: Bengaluru</p>
+              <p>Community: Vyshya</p>
+              <p>Rashi: Vrishabha</p>
+              <p>Nakshatra: Rohini</p>
+              <p>Gothra: To be updated</p>
+              <p>Father: To be updated</p>
+              <p>Siblings: To be updated</p>
+              <p>Marital Status: Never Married</p>
+              <p>Mobile Number: To be updated</p>
+            </div>
+          </article>
+        </section>
+      </section>
+
+      <section id="about" class="info-section">
+        <p class="eyebrow">About</p>
+        <h2>About Sekhar Vyshya Matrimony</h2>
+        <p>
+          Sekhar Vyshya Matrimony is created to help Vyshya families find suitable
+          bride and groom matches within the community. Profiles are reviewed by
+          admin and shared carefully for marriage-related purposes.
+        </p>
+      </section>
+
+      <section id="contact" class="info-section">
+        <p class="eyebrow">Contact</p>
+        <h2>Contact Admin</h2>
+        <p>
+          For profile registration, payment verification, profile updates, or
+          matrimonial enquiries, please contact the admin.
+        </p>
+        <p><strong>WhatsApp:</strong> 9849676581</p>
+        <p><strong>UPI ID:</strong> 6281169109@ibl</p>
+        <p><strong>Subscription:</strong> ₹1 for 3 months</p>
+      </section>
+
+      <section id="privacy" class="info-section">
+        <p class="eyebrow">Privacy</p>
+        <h2>Privacy and Trust</h2>
+        <p>
+          Profile details and photos are used only for matrimonial purposes within
+          the Vyshya community. Contact numbers, horoscope files, and private
+          details are not displayed publicly and are shared only after admin review.
+        </p>
+      </section>
+
+      <section id="feedback" class="info-section">
+        <p class="eyebrow">Feedback</p>
+        <h2>Share Feedback</h2>
+        <p>
+          Your feedback helps improve this service for the community. Send your
+          suggestions, corrections, or concerns to the admin on WhatsApp.
+        </p>
+        <a class="whatsapp-link" href="https://wa.me/919849676581" target="_blank" rel="noreferrer">
+          Send Feedback on WhatsApp
+        </a>
+      </section>
+    </main>
+
+    <footer>
+      <p>Profiles are shared only for matrimonial purposes within the Vyshya community.</p>
+    </footer>
+
+    <script type="module" src="app.js"></script>
+  </body>
+</html>
